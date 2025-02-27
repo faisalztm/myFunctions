@@ -1,5 +1,5 @@
 # Class Version
-1.1.6
+1.1.7
 
 # Warna dan Perlengkapan
 Line 6 - 49
