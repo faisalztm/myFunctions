@@ -108,9 +108,9 @@ class Display {
 		$r = json_decode(file_get_contents("http://ip-api.com/json"));
 		if($r->status == "success")return $r;
 	}
-	static function Slow($str){
+	static function User($str){
           foreach (str_split($str) as $rt){
-          print $rt;
+          print h."🙎 Username".sd.p.$str;
           usleep(30000);}
           print "\n";
     }
@@ -123,7 +123,7 @@ class Display {
     static function Balance($str){
           foreach (str_split($str) as $rt){
           print h."💰 Balance".sd.p.$str;
-          usleep(15000);}
+          usleep(30000);}
           print "\n";
     }
     static function Gas($str){
