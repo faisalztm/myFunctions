@@ -130,7 +130,7 @@ class Display {
           print $rt;
           usleep(2500);
         }}
-        static function User($msg){return sd.h."Username ".p.$msg.n;}
+        static function User($msg){return h."Username ".p.$msg.n;}
         static function Balance($msg){return "💰 ".h."Balance ".p.$msg.n;}
 	static function Error($except){return m."---[".p."!".m."] ".p.$except;}
 	static function Success($msg){return h."---[".p."✓".h."] ".p.$msg.n;}
