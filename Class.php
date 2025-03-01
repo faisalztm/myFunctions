@@ -108,26 +108,13 @@ class Display {
 		$r = json_decode(file_get_contents("http://ip-api.com/json"));
 		if($r->status == "success")return $r;
 	}
-	static function User($msg){
-          return str_split(h."🙎 Username".sd.p.$msg);
-	}
-    static function Sukses($str){
-          foreach (str_split($str) as $rt){
-          print "✅ ".p.$rt;
-          usleep(15000);}
-          print "\n";
-    }
-    static function Balance($str){
-          foreach (str_split($str) as $rt){
-          print h."💰 Balance".sd.p.$rt;
-          usleep(30000);}
-          print "\n";
-    }
-    static function Gas($str){
+	static function User($msg){return h."🙎 Username".sd.p.$msg.n;}
+        static function Sukses($msg){return "✅ ".p.$msg.n;}
+        static function Balance($msg){return h."💰 Balance".sd.p.$msg.n;}
+        static function Gas($str){
           foreach (str_split($str) as $rt){
           print $rt;
-          usleep(2500);
-    }}
+          usleep(2500);}}
 	static function Error($except){return m."---[".p."!".m."] ".p.$except;}
 	static function Success($msg){return h."---[".p."✓".h."] ".p.$msg.n;}
 	static function Isi($msg){return m."╭[".p."Input ".$msg.m."]".n.m."╰> ".h;}
