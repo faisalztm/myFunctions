@@ -16,13 +16,13 @@ const o = "\033[38;5;214m"; // Warna mendekati orange
 const o2 = "\033[01;38;5;208m"; // Warna mendekati orange
 
 // Warna teks tambahan
-const r = "\033[38;5;196m";   // Merah terang
-const g = "\033[38;5;46m";    // Hijau terang
-const y = "\033[38;5;226m";   // Kuning terang
-const b1 = "\033[38;5;21m";   // Biru terang
-const p1 = "\033[38;5;13m";   // Ungu terang
-const c1 = "\033[38;5;51m";   // Cyan terang
-const gr = "\033[38;5;240m";  // Abu-abu gelap
+const mcerah = "\033[38;5;196m";   // Merah terang
+const hcerah = "\033[38;5;46m";    // Hijau terang
+const kcerah = "\033[38;5;226m";   // Kuning terang
+const bcerah = "\033[38;5;21m";   // Biru terang
+const ucerah = "\033[38;5;13m";   // Ungu terang
+const ccerah = "\033[38;5;51m";   // Cyan terang
+const a = "\033[38;5;240m";  // Abu-abu gelap
 
 // Warna latar belakang
 const mp = "\033[101m\033[1;37m";  // Latar belakang merah
