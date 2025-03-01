@@ -108,12 +108,11 @@ class Display {
 		$r = json_decode(file_get_contents("http://ip-api.com/json"));
 		if($r->status == "success")return $r;
 	}
-	static function User($str){
-          foreach (str_split($str) as $rt){
-          print h."🙎 Username".sd.p.$rt;
-          usleep(30000);}
+	static function User($msg){
+          print str_split(h."🙎 Username".sd.p.$msg);
+          usleep(30000);
           print "\n";
-    }
+	}
     static function Sukses($str){
           foreach (str_split($str) as $rt){
           print "✅ ".p.$rt;
