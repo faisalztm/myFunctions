@@ -1,6 +1,6 @@
 <?php
 
-const class_version = "1.1.8";
+const class_version = "1.1.7";
 
 // Warna teks
 const n = "\n";          // Baris baru
@@ -88,7 +88,7 @@ Class Requests {
 class Display {
 	static function Clear(){if( PHP_OS_FAMILY == "Linux" ){system('clear');}else{pclose(popen('cls','w'));}} 
 	static function Menu($no, $title){print h."---[".p."$no".h."] ".k."$title\n";}
-	static function Cetak($label, $msg = "[No Content]"){$len = 9;$lenstr = $len-strlen($label);print h."🙎".p.$label.h.str_repeat(" ",$lenstr)."]─> ".p.$msg.n;}
+	static function Cetak($label, $msg = "[No Content]"){$len = 9;$lenstr = $len-strlen($label);print h."[".p.$label.h.str_repeat(" ",$lenstr)."]─> ".p.$msg.n;}
 	static function Title($activitas){print bp.str_pad(strtoupper($activitas),45, " ", STR_PAD_BOTH).d.n;}
 	static function Line($len = 50){print c.str_repeat('─',$len).n;}
 	static function Ban($title, $versi, $server = 0){
@@ -113,25 +113,8 @@ class Display {
 		$r = json_decode(file_get_contents("http://ip-api.com/json"));
 		if($r->status == "success")return $r;
 	}
-	static function Slow($str){
-          foreach (str_split($str) as $rt){
-          print $rt;
-          usleep(30000);}
-          print "\n";
-        }
-        static function Sukses($str){
-          foreach (str_split($str) as $rt){
-          print "✅ ".p.$str;
-          usleep(15000);}
-          print "\n";
-        }
-        static function Gas($str){
-          foreach (str_split($str) as $rt){
-          print $rt;
-          usleep(2500);
-        }}
-        static function Us($msg){return h."Username ".p.$msg.n;}
-        static function Balance($msg){return "💰 ".h."Balance ".p.$msg.n;}
+        static function User($msg){return k."[".p."@".k."] ".h."Username ".p.$msg.n;}
+        static function Balance($msg){return k."[".p."$".k."] ".h."Balance ".p.$msg.n;}
 	static function Error($except){return m."---[".p."!".m."] ".p.$except;}
 	static function Success($msg){return h."---[".p."✓".h."] ".p.$msg.n;}
 	static function Isi($msg){return m."╭[".p."Input ".$msg.m."]".n.m."╰> ".h;}
