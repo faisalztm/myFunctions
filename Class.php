@@ -110,19 +110,19 @@ class Display {
 	}
 	static function User($str){
           foreach (str_split($str) as $rt){
-          print h."🙎 Username".sd.p.$str;
+          print h."🙎 Username".sd.p.$rt;
           usleep(30000);}
           print "\n";
     }
     static function Sukses($str){
           foreach (str_split($str) as $rt){
-          print "✅ ".p.$str;
+          print "✅ ".p.$rt;
           usleep(15000);}
           print "\n";
     }
     static function Balance($str){
           foreach (str_split($str) as $rt){
-          print h."💰 Balance".sd.p.$str;
+          print h."💰 Balance".sd.p.$rt;
           usleep(30000);}
           print "\n";
     }
