@@ -48,6 +48,12 @@ const bg_p1 = "\033[48;5;13m";   // Latar belakang ungu terang
 const bg_c1 = "\033[48;5;51m";   // Latar belakang cyan terang
 const bg_gr = "\033[48;5;240m";  // Latar belakang abu-abu gelap
 
+//kreasi
+const sd = mcerah." = ".d;
+const titik2m = mcerah." : ".d;
+const titik2b = b." : ".d;
+
+
 const LIST_YOUTUBE = [
 	"https://youtu.be/lf1IpmCBGKU",
 	"https://youtu.be/ZWBJ7unGjm8",
@@ -108,7 +114,10 @@ class Display {
 		$r = json_decode(file_get_contents("http://ip-api.com/json"));
 		if($r->status == "success")return $r;
 	}
-	static function User($msg){return h."🙎 Username".sd.p.$msg.n;}
+	static function User($msg){
+	       foreach (str_split($str) as $rt){
+               print h."🙎 Username".sd.p.$msg;
+               usleep(30000);}print "\n";}
         static function Sukses($msg){return "✅ ".p.$msg.n;}
         static function Balance($msg){return h."💰 Balance".sd.p.$msg.n;}
         static function Gas($str){
