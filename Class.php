@@ -109,7 +109,7 @@ class Display {
 		if($r->status == "success")return $r;
 	}
 	static function User($msg){
-          print str_split(h."🙎 Username".sd.p.$msg);
+          return str_split(h."🙎 Username".sd.p.$msg);
 	}
     static function Sukses($str){
           foreach (str_split($str) as $rt){
