@@ -90,14 +90,14 @@ class Display {
 	static function Clear(){if( PHP_OS_FAMILY == "Linux" ){system('clear');}else{pclose(popen('cls','w'));}} 
 	static function Menu($no, $title){print h."---[".p."$no".h."] ".k."$title\n";}
 	static function Cetak($label, $msg = "[No Content]"){$len = 9;$lenstr = $len-strlen($label);print h."[".p.$label.h.str_repeat(" ",$lenstr)."]─> ".p.$msg.n;}
-	static function Title($activitas){print bp.str_pad(strtoupper($activitas),45, " ", STR_PAD_BOTH).d.n;}
-	static function Line($len = 50){print c.str_repeat('─',$len).n;}
+	static function Title($activitas){print bp.str_pad(strtoupper($activitas),44, " ", STR_PAD_BOTH).d.n;}
+	static function Line($len = 44){print c.str_repeat('─',$len).n;}
 	static function Ban($title, $versi, $server = 0){
 		$api = self::ipApi();
 		self::Clear();
 		if($api){
 			date_default_timezone_set($api->timezone);
-			print str_pad($api->city.', '.$api->regionName.', '.$api->country, 54, " ", STR_PAD_BOTH).n;
+			print str_pad($api->city.', '.$api->regionName.', '.$api->country, 55, " ", STR_PAD_BOTH).n;
 		}
 		print yh.' '.date("l").'               '.date("d/M/Y").'             '.date("H:i").' '.d."\n";
 		print m."  _______ _______ ___ ___   ".n;
@@ -107,13 +107,33 @@ class Display {
         print p." |:  1  \  |:  | |:  |   |  ".h."Youtube   ".k.": ".p."ztm pekiq".n;
         print p." |::.. . | |::.| |::.|:. |  ".h."Thanks To ".k.": ".p."fat9ght".n;
         print p." `-------' `---' `--- ---'".n;
-		print mp.str_pad("FREE SCRIPT NOT FOR SALE", 54, " ", STR_PAD_BOTH).d.n.n;
+		print mp.str_pad("FREE SCRIPT NOT FOR SALE", 53, " ", STR_PAD_BOTH).d.n.n;
 		eval(base64_decode("aWYoJGFwaS0+Y291bnRyeSA9PSAnVXpiZWtpc3RhbicpewoJCQlzZWxmOjpMaW5lKCk7CgkJCXByaW50IERpc3BsYXk6OkVycm9yKCJTdGF0dXMgU2NyaXB0IGlzIG9mZmxpbmVcbiIpOwoJCQlleGl0OwoJCX0="));
+		if($server){
+			$cekServer = Functions::Server(title);
+			if($cekServer['data']['status'] != "online"){
+				self::Line();
+				print Display::Error("Status Script is offline\n");
+				exit;
+			}
+			$update = ($cekServer['data']['version'] == versi)?false:true;
+			if($update > null){
+				print m."---[".p."^".m."]".h." Update sc Detect\n";
+				print m."---[".p."version ".m."] ".p.$cekServer['data']['version'].n;
+				print m."---[".p."download".m."] ".p.$cekServer['data']['link'].n;
+				self::Line();
+				exit;
+			}
+		}
 	}
-    static function Nama($msg){return k."[".p."@".k."] ".h."Username ".p.$msg.n;}
+	static function ipApi(){
+		$r = json_decode(file_get_contents("http://ip-api.com/json"));
+		if($r->status == "success")return $r;
+	}
+	static function Nama($msg){return k."[".p."@".k."] ".h."Username ".p.$msg.n;}
     static function Saldo($msg){return k."[".p."$".k."] ".h."Balance ".p.$msg.n;}
 	static function Error($except){return m."---[".p."!".m."] ".p.$except;}
-	static function Success($msg){return h."---[".p."✓".h."] ".p.$msg.n;}
+	static function Sukses($msg){return h."---[".p."✓".h."] ".p.$msg.n;}
 	static function Isi($msg){return m."╭[".p."Input ".$msg.m."]".n.m."╰> ".h;}
 }
 class Functions {
