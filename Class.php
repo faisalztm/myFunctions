@@ -130,8 +130,8 @@ class Display {
           print $rt;
           usleep(2500);
         }}
-        static function User($label, $msg = "[No Content]"){$len = 9;$lenstr = $len-strlen($label);print "• ".h.$label.m.str_repeat(" ",$lenstr)."= ".p.$msg.n;}
-        static function Balance($label, $msg = "[No Content]"){$len = 9;$lenstr = $len-strlen($label);print "• ".h.$label.m.str_repeat(" ",$lenstr)."= ".p.$msg.n;}
+        static function User($msg){return "🙎 ".h."Username ".p.$msg.n;}
+        static function Balance($msg){return "💰 ".h."Balance ".p.$msg.n;}
 	static function Error($except){return m."---[".p."!".m."] ".p.$except;}
 	static function Success($msg){return h."---[".p."✓".h."] ".p.$msg.n;}
 	static function Isi($msg){return m."╭[".p."Input ".$msg.m."]".n.m."╰> ".h;}
