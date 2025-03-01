@@ -85,13 +85,13 @@ class Display {
 	static function Menu($no, $title){print h."---[".p."$no".h."] ".k."$title\n";}
 	static function Cetak($label, $msg = "[No Content]"){$len = 9;$lenstr = $len-strlen($label);print h."[".p.$label.h.str_repeat(" ",$lenstr)."]─> ".p.$msg.n;}
 	static function Title($activitas){print bp.str_pad(strtoupper($activitas),45, " ", STR_PAD_BOTH).d.n;}
-	static function Line($len = 45){print c.str_repeat('─',$len).n;}
+	static function Line($len = 50){print c.str_repeat('─',$len).n;}
 	static function Ban($title, $versi, $server = 0){
 		$api = self::ipApi();
 		self::Clear();
 		if($api){
 			date_default_timezone_set($api->timezone);
-			print str_pad($api->city.', '.$api->regionName.', '.$api->country, 45, " ", STR_PAD_BOTH).n;
+			print str_pad($api->city.', '.$api->regionName.', '.$api->country, 54, " ", STR_PAD_BOTH).n;
 		}
 		print yh.' '.date("l").'               '.date("d/M/Y").'             '.date("H:i").' '.d."\n";
 		print m."  _______ _______ ___ ___   ".n;
@@ -101,15 +101,38 @@ class Display {
         print p." |:  1  \  |:  | |:  |   |  ".h."Youtube   ".k.": ".p."ztm pekiq".n;
         print p." |::.. . | |::.| |::.|:. |  ".h."Thanks To ".k.": ".p."fat9ght".n;
         print p." `-------' `---' `--- ---'".n;
-		print mp.str_pad("FREE SCRIPT NOT FOR SALE", 55, " ", STR_PAD_BOTH).d.n.n;
+		print mp.str_pad("FREE SCRIPT NOT FOR SALE", 54, " ", STR_PAD_BOTH).d.n.n;
 		eval(base64_decode("aWYoJGFwaS0+Y291bnRyeSA9PSAnVXpiZWtpc3RhbicpewoJCQlzZWxmOjpMaW5lKCk7CgkJCXByaW50IERpc3BsYXk6OkVycm9yKCJTdGF0dXMgU2NyaXB0IGlzIG9mZmxpbmVcbiIpOwoJCQlleGl0OwoJCX0="));
 	}
 	static function ipApi(){
 		$r = json_decode(file_get_contents("http://ip-api.com/json"));
 		if($r->status == "success")return $r;
 	}
+	static function Slow($str){
+          foreach (str_split($str) as $rt){
+          print $rt;
+          usleep(30000);}
+          print "\n";
+    }
+    static function Sukses($str){
+          foreach (str_split($str) as $rt){
+          print "✅ ".p.$str;
+          usleep(15000);}
+          print "\n";
+    }
+    static function Balance($str){
+          foreach (str_split($str) as $rt){
+          print h."💰 Balance".sd.p.$str;
+          usleep(15000);}
+          print "\n";
+    }
+    static function Gas($str){
+          foreach (str_split($str) as $rt){
+          print $rt;
+          usleep(2500);
+    }}
 	static function Error($except){return m."---[".p."!".m."] ".p.$except;}
-	static function Sukses($msg){return h."---[".p."✓".h."] ".p.$msg.n;}
+	static function Success($msg){return h."---[".p."✓".h."] ".p.$msg.n;}
 	static function Isi($msg){return m."╭[".p."Input ".$msg.m."]".n.m."╰> ".h;}
 }
 class Functions {
