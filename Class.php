@@ -49,9 +49,8 @@ const bg_c1 = "\033[48;5;51m";   // Latar belakang cyan terang
 const bg_gr = "\033[48;5;240m";  // Latar belakang abu-abu gelap
 
 //kreasi
-const sd = mcerah." = ".d;
-const titik2m = mcerah." : ".d;
-const titik2b = b." : ".d;
+const sd = "\033[38;5;196m = ";
+const titik2 = "\033[38;5;196m : ";
 
 
 const LIST_YOUTUBE = [
