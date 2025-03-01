@@ -110,8 +110,6 @@ class Display {
 	}
 	static function User($msg){
           print str_split(h."🙎 Username".sd.p.$msg);
-          usleep(30000);
-          print "\n";
 	}
     static function Sukses($str){
           foreach (str_split($str) as $rt){
