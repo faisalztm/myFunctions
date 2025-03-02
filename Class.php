@@ -48,10 +48,6 @@ const bg_p1 = "\033[48;5;13m";   // Latar belakang ungu terang
 const bg_c1 = "\033[48;5;51m";   // Latar belakang cyan terang
 const bg_gr = "\033[48;5;240m";  // Latar belakang abu-abu gelap
 
-//kreasi
-const sd = mcerah." = ".d;
-const titik2m = mcerah." : ".d;
-const titik2b = b." : ".d;
 
 
 const LIST_YOUTUBE = [
@@ -131,7 +127,7 @@ class Display {
 		if($r->status == "success")return $r;
 	}
 	static function Nama($msg){return k."[".p."@".k."] ".h."Username ".p.$msg.n;}
-    static function Saldo($msg){return k."[".p."$".k."] ".h."Balance ".p.$msg.n;}
+        static function Saldo($msg){return k."[".p."$".k."] ".h."Balance ".p.$msg.n;}
 	static function Error($except){return m."---[".p."!".m."] ".p.$except;}
 	static function Sukses($msg){return h."---[".p."✓".h."] ".p.$msg.n;}
 	static function Isi($msg){return m."╭[".p."Input ".$msg.m."]".n.m."╰> ".h;}
